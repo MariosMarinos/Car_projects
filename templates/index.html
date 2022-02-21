@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css')}}">
+    <title>
+        Build a Survey Form using HTML and CSS
+    </title>
+
+    <style>
+        /* Styling the Body element i.e. Color,
+		Font, Alignment */
+        body {
+            background-color: #ff0000;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+		select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+		button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>User Statistcs</h1>
+
+    <!-- Create Form -->
+    <form id="form" , method="POST">
+
+        <!-- Details -->
+        <div class="form-control">
+            <label for="age" id="label-age">
+                Age
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" name="Age" placeholder="Enter your age" />
+        </div>
+
+        <div class="form-control">
+            <label for="gender" id="label-gender">
+                Gender
+            </label>
+
+            <!-- Dropdown options -->
+            <select name="Gender" id="role">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="location" id="label-location">
+                Location
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" name="Location" id="location" placeholder="Enter your location" />
+        </div>`
+
+        <div class="form-control">
+            <label>
+                Do you own a driving license?
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-1" name="own_license" value="Yes">Yes</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-2" name="own_license" value="No">No</input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label> What is the main reason you use your car for?
+                <small>(Check all that apply)</small>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox" name="main_reason" value="Work">Work</input></label>
+            <label for="inp-2">
+                <input type="checkbox" name="main_reason" value="Leisure">Leisure</input></label>
+            <label for="inp-3">
+                <input type="checkbox" name="main_reason" value="Travel">Travel</input></label>
+            <label for="inp-4">
+                <input type="checkbox" name="main_reason" value="Other">Other</input></label>
+        </div>
+
+        <div class="form-control">
+            <label> How often you use your car?
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="radio" name="How_often" value="Daily">Daily</input></label>
+            <label for="inp-2">
+                <input type="radio" name="How_often" value="Weekly">Weekly</input></label>
+            <label for="inp-3">
+                <input type="radio" name="How_often" value="L_t_M">Less than Monthly</input></label>
+            <label for="inp-4">
+                <input type="radio" name="How_often" value="Monthly">Monthly</input></label>
+            <label for="inp-5">
+                <input type="radio" name="How_often" value="M_t_M">More than Montly </input></label>
+        </div>
+
+        <div class="form-control">
+            <label> Which categories from the following do you find important for cars?
+                <small>(Check all that apply)</small>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox" name="important_categ" value="Model">Model</input></label>
+            <label for="inp-2">
+                <input type="checkbox" name="important_categ" value="Topspeed">Topspeed</input></label>
+            <label for="inp-3">
+                <input type="checkbox" name="important_categ" value="Color">Color</input></label>
+            <label for="inp-4">
+                <input type="checkbox" name="important_categ" value="Emissions">Emissions</input></label>
+            <label for="inp-5">
+                <input type="checkbox" name="important_categ" value="Other">Other</input></label>
+        </div>
+
+        <p>How important are carbon emissions to you?</p>
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="form-control">
+            <label> What is the most important factor to this?
+                <small>(Check all that apply)</small>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox" name="most_important" value="Costs">Costs of fuels</input></label>
+            <label for="inp-2">
+                <input type="checkbox" name="most_important" value="Enviromental">Enviromental concerns</input></label>
+            <label for="inp-3">
+                <input type="checkbox" name="most_important" value="Other">Other</input></label>
+        </div>
+
+
+
+        <!-- Multi-line Text Input Control -->
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+</body>
+
+</html>
